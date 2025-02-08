@@ -1,0 +1,53 @@
+POST http://localhost:9090/register HTTP/1.1
+content-Type: application/json
+
+{
+    "username": "neha",
+    "password": "neha",
+    "email": "neha@gmail.com",
+    "name"  : "neha"
+}
+
+###
+POST http://localhost:9090/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "neha@gmail.com",
+    "password": "neha"
+}
+
+
+### 
+GET http://localhost:9090/get_user_and_profile?token=59899936eda0be3858f8968816710e45de1f32dc3b0d98eb7c08dd0ca120db24
+Content-Type: application/json
+
+
+###
+POST  http://localhost:9090/update_profile_data HTTP/1.1
+Content-Type: application/json
+
+{
+    "token" : "59899936eda0be3858f8968816710e45de1f32dc3b0d98eb7c08dd0ca120db24",
+    "bio" : "hi there",
+    "currentPost" : "CTO",
+    "pastWork" : [
+        {
+            "company" : "google",
+            "position" : "CTO",
+            "years" : "10"
+        }
+    ],
+    "education" : [
+        {
+            "institution" : "google",
+            "degree" : "Bachelor's",
+            "major" : "Computer Science",
+            "years" : "10"
+        }
+    ]
+}
+
+###
+GET http://localhost:9090/user/get_all_users
+
